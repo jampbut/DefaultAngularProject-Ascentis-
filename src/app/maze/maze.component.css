@@ -1,0 +1,118 @@
+html, body {margin: 0; height: 100%; width: 100%; overflow: hidden}
+
+.background {
+    z-index: 500;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    margin-left: -1vw;
+    margin-top: -1vw;
+    background-image: url(Assignment_Assets/Images/Classroom+Window.png);
+    background-size: cover;
+    position: relative;
+    background-color: #3887a4be;
+    background-blend-mode: multiply;
+}
+
+.maze-box {
+    width: 1180px;
+    height: 750px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+.controls-box {
+    width: 310px;
+    height: 250px;
+    border-radius: 8px;
+    margin-left: -12.5%;
+    position: absolute;
+    top: 50%;
+    left: calc(4% + 1280px + 2%);
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.maze-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.maze-row {
+    display: flex;
+    width: 100%;
+}
+
+.maze-cell {
+    width: 15px;
+    height: 8px;
+}
+
+.wall {
+    background-color: #5b5b5b;
+}
+
+.path {
+    background-color: #fff;
+}
+
+.special {
+    background-color: #f0db4f;
+}
+
+.player {
+    position: absolute;
+    width: 50px; /* Assuming this is the width of each cell */
+    height: 60px; /* Assuming this is the height of each cell */
+    z-index: 10; /* To ensure the player appears on top */
+
+}
+
+.flag{
+    background-image:url("src/assets/flag.png");
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    position: absolute;
+    background-repeat: none;
+    bottom: 2%;
+    right: 1.5%;
+}
+
+.question-box {
+    width: 52px;
+    height: 52px; /* Assuming each cell is 8px tall */
+    background-image: url('src/assets/block-question-duotone.svg');
+    background-size:cover;
+    background-position: -0.1px;
+    position: absolute;
+    background-repeat: no-repeat;
+    margin-left:15px;
+    background-color: hwb(27 25% 0%);
+    mix-blend-mode:multiply;
+    transition: background-color 0.3s;
+    filter: invert();
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+#controlLabel{
+ font-family: Arial, Helvetica, sans-serif;
+ color: #5b5b5b;
+ font-weight: bolder;
+ font-size: 1.4em;
+ margin-top: 15px;
+ margin-left: 15px;
+}

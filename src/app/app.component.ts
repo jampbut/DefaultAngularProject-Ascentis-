@@ -7,4 +7,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'DefaultAngularProject';
+  showModal: boolean = false;
+  currentMazeQuestion: any;
+
+  toggleModal() {
+    this.showModal = !this.showModal;
+  }
+  showCongratsModal: boolean = false;
+
+  toggleCongratsModal() {
+    this.showCongratsModal = !this.showCongratsModal;
+  }
+  toggleQuestionModal() {
+    this.showModal = !this.showModal;
+  }
+
+  handleCloseModal() {
+    this.showModal = false;
+}
+
 }

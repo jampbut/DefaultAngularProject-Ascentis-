@@ -1,0 +1,35 @@
+<div class="background">
+    <div class="maze-box">
+        <div class="maze-container">
+
+            <ng-container *ngFor="let box of questionSquares">
+                <div class="question-box" 
+                     [style.left.px]="box.x * cellWidth/1.9" 
+                     [style.top.px]="box.y * cellHeight"
+                     [ngStyle]="{'opacity': box.answered ? '0.4' : '1'}"
+                     >
+                     
+                    <!-- Content for question box, if any -->
+                </div>
+            </ng-container>
+
+            <div class="maze-row" *ngFor="let row of mazeArray; let rowIndex = index">
+                <div class="maze-cell" *ngFor="let cell of row; let cellIndex = index" [ngClass]="{
+                    'wall': cell === '#',
+                    'path': cell === '.',
+                    'special': cell === 's'
+                }"></div>
+                <div class="flag">
+
+                </div>
+            </div>
+            <!-- Player Character -->
+            <img src="assets/person-running-duotone.png" class="player" 
+                 [style.left.px]="(playerPosition.x * cellWidth)/1.9" 
+                 [style.top.px]="(playerPosition.y * cellHeight)">
+        </div>
+        <div class="controls-box">
+            <div id="controlLabel">Controls:</div>
+            <app-controls (directionChosen)="handleDirection($event)"></app-controls>
+        </div>
+</div>

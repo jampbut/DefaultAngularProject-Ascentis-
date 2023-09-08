@@ -1,0 +1,75 @@
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1%;
+}
+
+.control-btn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #e48857;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 90px;
+    height: 80px;
+    border-radius: 5px;
+}
+
+.control-btn:hover {
+    background-color: #fb965f;  /* Darker green on hover */
+}
+
+/* Positioning the left and right buttons */
+.control-btn:nth-child(4) { /* DOwn button */
+    position: absolute;
+    top: 75%;
+    transform: translateY(-50%);
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('Assignment_Assets/Icons/arrow-down-duotone.svg');
+    padding: 2%;
+    filter: invert();
+
+
+}
+.control-btn:nth-child(1) { /* Up button */
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('Assignment_Assets/Icons/arrow-up-duotone.svg');
+    padding: 2%;
+    filter: invert();
+}
+.control-btn:nth-child(2),  /* Left button */
+
+.control-btn:nth-child(3) { /* Right button */
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('Assignment_Assets/Icons/arrow-right-duotone.svg');
+    padding: 2%;
+    filter: invert();
+}
+
+.control-btn:nth-child(2) { /* Left button */
+    left: 5%;
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('Assignment_Assets/Icons/arrow-left-duotone.svg');
+    padding: 2%;
+    filter: invert();
+}
+
+.control-btn:nth-child(3) { /* Right button */
+    right: 4%;
+}

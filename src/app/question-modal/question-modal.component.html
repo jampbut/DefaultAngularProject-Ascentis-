@@ -1,0 +1,27 @@
+<div class="modal-background">
+  <div class="question-modal">
+    <div class="left-section"></div>
+    <div class="right-section">
+      <div class="question-box">
+        <div>
+          <p *ngIf="currentQuestion && currentQuestion.text">{{ currentQuestion.text }}</p>
+        </div>
+        <button class="listen-again" (click)="playAudio(currentQuestion.audio)">Listen again</button>
+      </div>
+      <div class="options">
+        <ng-container *ngIf="currentQuestion">
+          <div class="option" 
+               *ngFor="let answer of currentQuestion.randomizedAnswers" 
+               (click)="selectAnswer(answer)"
+               [class.selected]="selectedOption && selectedOption.text === answer && !answerConfirmed"
+               [class.correct-answer]="selectedOption && selectedOption.text === answer && correctSelection && answerConfirmed"
+               [class.incorrect-answer]="selectedOption && selectedOption.text === answer && !correctSelection && answerConfirmed">
+            {{ answer }}
+          </div>
+        </ng-container>
+      </div>
+      <button id="confirmButton" *ngIf="showConfirmButton" (click)="confirmAnswer()">Confirm</button>
+      <button id="closeButton" *ngIf="showCloseButton" (click)="closeModal()">Close</button>
+    </div>
+  </div>
+</div>
